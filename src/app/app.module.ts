@@ -5,16 +5,22 @@ import { AppComponent } from './app.component';
 import { MatchComponent } from './match/match.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatchComponent
+    MatchComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
