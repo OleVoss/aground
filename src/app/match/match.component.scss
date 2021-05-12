@@ -7,15 +7,24 @@
     align-items: top;
 }
 
+mat-card {
+    max-width: 50rem;
+}
+
+.card_element {
+    margin-right: 1rem;
+}
+
 span {
   display: inline-flex;
   align-items: center;
   margin-left: 0.7rem;
 }
 
-#state_btn {
+.state_btn {
     height: 25px;
     width: 25px;
     background-color: #80E977;
     border-radius: 4px;
+    margin-right: 2rem;
 }

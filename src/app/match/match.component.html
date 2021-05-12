@@ -1,28 +1,39 @@
-<mat-card fxLayout="row" fxLayoutAlign="space-around center" id=match-card>
-   <div class="class-border" fxFlex="5">
-      <div id="state_btn">
-
+<mat-card fxLayout="row" fxLayoutAlign="space-around center" id="match-card">
+   <div class="card_element" fxFlex="5">
+      <div class="state_btn" *ngIf="canEdit" [matMenuTriggerFor]="menu" [style.background-color]="colorFromState()">
       </div>
+      <div class="state_btn" *ngIf="!canEdit" [style.background-color]="colorFromState()">
+      </div>
+      <mat-menu #menu="matMenu">
+         <button mat-menu-item (click)="changeState(matchState.Open)">Open</button>
+         <button mat-menu-item (click)="changeState(matchState.Fixed)">Fixed</button>
+         <button mat-menu-item (click)="changeState(matchState.Played)">Played</button>
+         <button mat-menu-item (click)="changeState(matchState.Late)">Late</button>
+      </mat-menu>
    </div> 
-   <div class="class-border date_div" fxLayoutAlign="center" fxFlex="10">
+   <div class="date_div" fxLayoutAlign="center" fxFlex="10">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <span>date</span>
+   </div> 
+   <div class="team_div" fxFlex="flex" fxLayoutAlign="end">
+      {{ team1 }}
+   </div> 
+   <div fxFlex="5" fxLayoutAlign="center">
+      {{ team1_score }}
+   </div> 
+   <div fxFlex="1">
+
+   </div> 
+   <div fxFlex="5" fxLayoutAlign="center">
+      {{ team2_score }}
+   </div> 
+   <div fxFlex="flex" fxLayoutAlign="start">
+      {{ team2 }}
+   </div> 
+   <div *ngIf="canEdit" fxFlex="5" fxLayoutAlign="end">
       <mat-icon>
-         event
+         edit
       </mat-icon>
-      <span>21.04.21</span>
-   </div> 
-   <div fxFlex="flex">
-
-   </div> 
-   <div fxFlex="flex">
-
-   </div> 
-   <div fxFlex="flex">
-
-   </div> 
-   <div fxFlex="flex">
-
-   </div> 
-   <div fxFlex="flex">
-
-   </div> 
+   </div>
 </mat-card>

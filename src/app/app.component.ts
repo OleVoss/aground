@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aground';
+  initailCount: number = 10;
+
+  team1 = "Die Wundertüten";
+  team1_score = 0;
+  team2 = "Tupperdosen";
+  team2_score = 2;
 }
